@@ -1,6 +1,6 @@
 const midtransClient = require('midtrans-client');
 const nodeMailer = require('../api/nodeMailer');
-let order_id = 32265
+let order_id = 909090
 
 // Create Snap API instance
 class MidtransController {
