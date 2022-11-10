@@ -1,17 +1,18 @@
 const midtransClient = require('midtrans-client');
 const nodeMailer = require('../api/nodeMailer');
-let order_id = 909090
+
 
 // Create Snap API instance
 class MidtransController {
 	static async getTokenMidtrans(req,res,next){
+		let order_id = new Date().getTime()
 		let userEmail = req.user.email
 		const server_key = process.env.SERVER_KEY
 		let snap = new midtransClient.Snap({
 			isProduction : false,
 			serverKey : server_key
 	});
-order_id = order_id + 1
+
 let parameter = {
 	"transaction_details": {
 			"order_id": `ORDERID-${order_id}`,
